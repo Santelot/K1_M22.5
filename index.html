@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M22.5</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los niños, presentar el enfoque del día y preparar sus mentes para la actividad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a los niños mientras muestras el logo de Gnius Club, luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, Genios del CODE SQUAD! ¡Bienvenidos al Bosque de los Susurros! Hoy tenemos una misión muy especial en este mágico lugar. ¿Sabían que los árboles del bosque tienen melodías secretas que solo pueden ser escuchadas si seguimos el camino correcto? ¡Sí! Pero el viento ha desordenado las notas y necesitamos su ayuda para restaurar la armonía. ¡Pero primero, vamos a calentar nuestras mentes para esta aventura!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la Diapositiva 3 "Gimnasio CODE SQUAD" e introduce la importancia de entrenar el cerebro antes de enfrentar el reto del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Maravilloso, CODE SQUAD! Antes de adentrarnos en el Bosque de los Susurros, vamos a activar nuestras mentes con un ejercicio de orientación espacial en el Gimnasio del CODE SQUAD. Escuchen con atención la canción que sonará a continuación. ¡Nos dará las pistas que necesitamos para seguir el camino correcto en el bosque!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-secuenciacion')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de algoritmos a través de un baile.</div>
+    </div>
+    <div id="baile-secuenciacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 4 “Baile de Algoritmos” e introduce la canción que seguiremos hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Es hora de moverse, Genios! Sigan el ritmo de esta canción mágica, donde cada movimiento nos ayuda a entender la dirección correcta. Si la canción dice 'adelante', nos movemos hacia adelante; si dice 'a un lado', nos movemos a un lado. ¡Así practicamos la orientación espacial mientras nos divertimos! ¿Listos para comenzar?"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🌳 Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de cuenta cuentos y narra la historia.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Hoy hemos llegado al Bosque de los Susurros, un lugar donde los árboles cantan melodías mágicas con sus hojas. Cada árbol tiene una nota musical especial, y juntos crean una hermosa sinfonía. Pero, ¡oh no! Un viento travieso ha soplado muy fuerte y ha desordenado las hojas, haciendo que las melodías se confundan. Ahora, los árboles no saben en qué dirección deben cantar y han perdido su armonía. El Guardián del Bosque nos necesita para restaurar el orden y hacer que el bosque vuelva a sonar hermoso. ¿Aceptan el desafío?"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para motivar al CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡CODE SQUAD! El Guardián del Bosque nos ha dado un mapa mágico con el orden correcto en que las hojas deben caer para que la melodía vuelva a sonar. Vamos a usar nuestras fichas de ruta para representar la dirección en que las hojas deben caer y completar el mapa. Cada ficha nos guiará hacia donde deben de ir las hojas. Pero, ¡cuidado! Debemos ser muy precisos con la orientación de las fichas, ya que cada una indica la dirección correcta en que debe moverse la hoja. ¡Juntos lograremos restaurar la sinfonía del bosque!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion_parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 “Formación de Equipos”, explica la importancia de trabajar en equipo y junta a los niños en pares. Si el número es impar, integra un trío para asegurar que todos tengan compañeros.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Hoy, vamos a explorar el Bosque de los Susurros en parejas. Recuerden lo que dice un antiguo proverbio del bosque: 'Un tronco no hace un bosque, pero muchos árboles hacen una gran melodía'. Cuando trabajamos juntos, nuestras ideas se unen y podemos lograr cosas maravillosas. ¡Busquen a un compañero y formen un equipo de exploradores! Si somos un número impar, no se preocupen, ¡yo me uniré a un equipo y exploraremos juntos!"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¿Todos encontraron a su compañero de aventura? ¡Excelente! Ahora que están en parejas, recuerden que trabajar en equipo significa escucharse, apoyarse y compartir ideas. Juntos, podemos descifrar el mapa del bosque y restaurar la melodía. ¡Prepárense, equipo, la aventura nos espera!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('codigo_visual')">
+        <div class="title">🎨 Actividad 5: Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir los retos de codificación según la edad y trabajar con fichas de ruta.</div>
+    </div>
+    <div id="codigo_visual" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('intercambio_construccion')">
+        <div class="title">🔄 Actividad 6: Intercambio de Códigos y Construcción ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Intercambio de códigos entre equipos y práctica de programación con fichas de ruta.</div>
+    </div>
+    <div id="intercambio_construccion" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🏁 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la misión y reflexión sobre lo aprendido durante la clase.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 25 y cierra la historia como cuenta cuentos. Realiza preguntas para reflexionar sobre lo aprendido.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    "¡CODE SQUAD! ¡Misión cumplida! Gracias a su increíble trabajo en equipo y sus habilidades de orientación espacial, han restaurado las melodías del Bosque de los Susurros. Los árboles vuelven a cantar en armonía y el Guardián del Bosque está muy agradecido. ¡Qué aventura tan mágica! Ahora reflexionemos un poco sobre lo que aprendimos hoy:
+- ¿Por qué fue importante seguir el orden y la dirección de las fichas en nuestro mapa?
+- ¿Qué representaban las fichas de ruta en la melodía del bosque?
+- ¿Cómo nos ayudó trabajar en equipo para superar los desafíos en el bosque?
+¡Son unos genios! Estoy muy orgulloso de ustedes."
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 8 y explica cómo crear el código para resolver el reto",
+                "dialogo": "¡CODE SQUAD! Para que las melodías del Bosque de los Susurros vuelvan a sonar, vamos a crear un código con fichas de camino. Cada ficha representará la dirección en la que una hoja debe caer: la ficha recta para una hoja que cae hacia adelante, la ficha de esquina para una hoja que gira a la derecha, y la ficha curva para una hoja que va hacia un lado. Dibujen la hoja, escriban el signo '=' y luego dibujen la ficha que la representará. ¡Así crearemos el camino musical del bosque!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 9, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "Aquí tienen sus papeles y colores, Genios del CODE SQUAD. Ahora, dibujen tres hojas: la Hoja de Roble, la Hoja de Arce y la Hoja de Abedul. Luego, asignen a cada hoja una ficha que indique su dirección. ¡Cada hoja tiene su propio camino musical!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo": "¡Excelente, CODE SQUAD! Trabajen juntos para completar el mapa musical del bosque. Recuerden, cada hoja debe tener una ficha que indique su dirección. ¡Dibujen con cuidado y asegúrense de que el mapa esté listo para que la melodía vuelva a sonar!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                 "dialogo": "¡Increíble, CODE SQUAD! Ahora vamos a usar los códigos que crearon para ayudar al Guardián del Bosque. Voy a recoger sus códigos, asignarles un nombre secreto y entregárselos a otro equipo. ¡Prepárense para descifrar mapas musicales!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 18 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Es hora de construir el camino musical, equipo! Con el código que recibieron, coloquen las fichas en el orden correcto: primero, la Hoja de Roble (ficha recta); luego, la Hoja de Arce (ficha de esquina); y al final, la Hoja de Abedul (ficha curva). ¡Asegúrense de que cada hoja siga su camino para restaurar la armonía del bosque!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                 "dialogo": "¡CODE SQUAD! ¡Atención del cuartel general! Un remolino mágico ha movido las hojas del bosque y nuestro mapa ya no funciona. ¡Oh, no! El Cuartel General nos ha enviado un nuevo código para reorganizar el camino de las hojas. ¡Vamos a trabajar juntos para resolver este desafío del bosque!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 22 “Código de Rescate K1” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo": "¡Genios del CODE SQUAD! En la pantalla tienen el 'Código de Rescate del Bosque'. Sigamos el nuevo código: ficha recta para la Hoja de Roble, ficha de esquina para la Hoja de Arce y ficha curva para la Hoja de Abedul. ¡Trabajen en equipo para que la melodía del bosque vuelva a sonar!"
+            }
+        ]
+    },
+   "K2": {
+        "5.2": [
+             {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 11 y explica cómo crear el código para resolver el reto.",
+                "dialogo": "¡CODE SQUAD! Para que el Bosque de los Susurros cante de nuevo, vamos a crear un código más completo. Usaremos las fichas para representar la dirección en que debe caer cada hoja: recta para la que cae hacia adelante, esquina para la que gira a la derecha, curva simple para la que cae a un lado y ficha de retorno para la que vuelve al principio. Dibujen cada hoja, pongan el signo '=' y luego la ficha que la represente. ¡Vamos a guiar la melodía del bosque!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion": "Reproduce la DIAPOSITIVA 12, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "Aquí tienen sus hojas y colores, Genios del CODE SQUAD. Ahora, dibujen cuatro hojas: la Hoja de Roble, la Hoja de Arce, la Hoja de Abedul y la Hoja de Sauce. Asignen a cada una una ficha que indique su dirección y creen un camino para que el bosque cante con armonía."
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 13 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                 "dialogo":"¡Excelente trabajo, CODE SQUAD! Trabajen juntos para crear su mapa musical. Recuerden que cada hoja necesita una ficha que indique su dirección. Primero dibujen la hoja, luego escriban “=” y después la ficha de camino correcta. ¡Con su ayuda, la melodía del bosque volverá a sonar!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo":"¡Maravilloso, CODE SQUAD! Ahora vamos a usar sus códigos para ayudar al Guardián del Bosque. Recogeré sus mapas, les daré un nombre secreto y se los daré a otro equipo. ¡Es momento de poner a prueba nuestros oídos musicales!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 19 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡A construir el camino musical, equipo! Con el código que recibieron, coloquen las fichas: ficha recta para la Hoja de Roble, ficha de esquina para la Hoja de Arce, ficha curva simple para la Hoja de Abedul y ficha de retorno para la Hoja de Sauce. ¡Asegúrense de que cada hoja siga su camino!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                 "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo":"¡CODE SQUAD! ¡Emergencia en el Bosque de los Susurros! Unos duendes juguetones movieron las hojas y nuestro mapa ya no funciona. ¡Oh, no! El Cuartel General nos envía un nuevo código para reorganizar el camino de la melodía. ¡Vamos a superar este desafío juntos!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion": "Reproduce la DIAPOSITIVA 23 “Código de Rescate K2” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                 "dialogo":"¡Atención, CODE SQUAD! El 'Código de Rescate del Bosque' es nuestra guía. Ficha recta para la Hoja de Roble, ficha de esquina para la Hoja de Arce, ficha curva simple para la Hoja de Abedul y ficha de retorno para la Hoja de Sauce. Sigan el código con atención para restaurar la armonía del bosque. ¡Ustedes pueden!"
+            }
+        ]
+    },
+    "K3": {
+        "5.3": [
+            {
+                "step": 1,
+                 "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 14 y explica cómo crear el código para resolver el reto.",
+                 "dialogo": "¡CODE SQUAD! Para que el Bosque de los Susurros cante una melodía perfecta, vamos a crear un código más detallado. Utilizaremos las fichas para representar la dirección en que debe caer cada hoja: recta para la que va hacia adelante, esquina para la que gira a la derecha, curva doble para la que va en espiral, curva simple para la que cae a un lado y ficha de retorno para la que vuelve a su inicio. ¡Este mapa musical será increíble!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 15, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "Aquí tienen todos sus materiales, Genios del CODE SQUAD. Ahora, dibujen cinco hojas: la Hoja de Roble, la Hoja de Arce, la Hoja de Abedul, la Hoja de Sauce y la Hoja de Palmera. Asignen a cada una una ficha que indique su dirección y guíen la melodía del bosque."
+            },
+            {
+                "step": 3,
+                 "time": { "30": 5, "40": 10, "50": 10 },
+                 "accion": "Reproduce la DIAPOSITIVA 16 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y fichas de ruta.",
+                "dialogo": "¡Qué gran trabajo, CODE SQUAD! Ahora trabajen juntos para crear su mapa musical. Asegúrense de que cada hoja tenga su ficha de dirección correcta: recta, esquina, curva doble, curva simple y retorno. ¡Recuerden que cada detalle cuenta para que el bosque vuelva a cantar con toda su belleza!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                 "dialogo":"¡Felicidades, CODE SQUAD! Ahora vamos a usar sus mapas musicales para que el Bosque de los Susurros cante en armonía. Recogeré sus códigos, los numeraré y se los daré a otro equipo. ¡Prepárense para un desafío de creación musical!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 20 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Es hora de usar sus habilidades, CODE SQUAD! Con el código que recibieron, coloquen las fichas: recta para la Hoja de Roble, esquina para la Hoja de Arce, curva simple para la Hoja de Abedul, ficha de retorno para la Hoja de Sauce y curva doble para la Hoja de Palmera. ¡Cada hoja debe seguir su camino con precisión!"
+            }
+        ],
+        "7": [
+            {
+                 "step": 1,
+                  "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                  "dialogo":"¡CODE SQUAD! ¡Alerta máxima en el Bosque! Una lluvia de estrellas ha movido las hojas y el mapa musical ya no funciona. ¡Oh, no! El Cuartel General nos ha enviado un nuevo código para reorganizar la melodía del bosque. ¡Vamos a trabajar juntos para superar este desafío!"
+            },
+             {
+                 "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 24 y motiva a los Genios a construir el nuevo código con bloques siguiendo el patrón proyectado.",
+                 "dialogo": "¡Atención, Genios del CODE SQUAD! En pantalla tienen el 'Código de Rescate del Bosque'. Sigan las instrucciones: recta para la Hoja de Roble, esquina para la Hoja de Arce, curva simple para la Hoja de Abedul, ficha de retorno para la Hoja de Sauce y curva doble para la Hoja de Palmera. ¡Trabajen en equipo y asegúrense de que la melodía del bosque vuelva a sonar!"
+            }
+        ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
+</body>
+</html>
